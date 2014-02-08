@@ -48,6 +48,10 @@ $(function() {
     }
   });
 
+  $('#db-num').change(function(e) {
+    var dbinfo = e.target.value.split('_'); 
+    location.href = '?overview&s='+dbinfo[0]+'&db='+dbinfo[1];
+  });
 
   $('li.current').parents('li.folder').removeClass('collapsed');
 

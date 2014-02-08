@@ -164,6 +164,12 @@ require 'includes/header.inc.php';
 <option value="<?php echo $i?>" <?php echo ($server['id'] == $i) ? 'selected="selected"' : ''?>><?php echo isset($srv['name']) ? format_html($srv['name']) : $srv['host'].':'.$srv['port']?></option>
 <?php } ?>
 </select>
+<select id="db-num">
+<?php $db_num = (isset($config['servers'][$server['id']]) && isset($config['servers'][$server['id']]['db_num']))?$config['servers'][$server['id']]['db_num']:16;
+for ($i=0; $i < $db_num; $i++) { ?>
+<option value="<?php echo $server['id'].'_'.$i?>" <?php echo ($server['db'] == $i) ? 'selected="selected"' : ''?>><?php echo $i;?></option>
+<?php } ?>
+</select>
 </p>
 
 <p>

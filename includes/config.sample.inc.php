@@ -8,6 +8,7 @@ $config = array(
       'host' => '127.0.0.1',
       'port' => 6379,
       'filter' => '*',
+      'db_num' => 16, // Number of databases in redis.conf.
 
       // Optional Redis authentication.
       //'auth' => 'redispasswordhere' // Warning: The password is sent in plain-text to the Redis server.

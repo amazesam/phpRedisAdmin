@@ -74,6 +74,14 @@ if (!isset($server['db'])) {
   $server['db'] = 0;
 }
 
+if(isset($_GET['db'])) {
+  setcookie("redisdb", $_GET['db'], time()+9999999999);
+  $_COOKIE['redisdb'] = $_GET['db'];
+}
+if(isset($_COOKIE['redisdb'])) {
+  $server['db'] = $_COOKIE['redisdb'];
+}
+
 if (!isset($server['filter'])) {
   $server['filter'] = '*';
 }
